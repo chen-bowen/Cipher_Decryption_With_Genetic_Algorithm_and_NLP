@@ -1,6 +1,7 @@
 # Cipher Decryption
 
-When we want to send a private message that only ourselves understand, we will use a encryption map that subsitute letters with some other letters, which makes the original message unreadable. However, suppose we don't know the original encryption map, is there a way to estimate/approximate the encryption map using NLP ? In this project, we will use the bigram character model to build a likelihood evaluation metric for the estimated encryption map, and which will be produced by a really interesting technique named genetic algorithm. The whole project contains 3 modeules - `LanguageModel`, `Encoder` and `Genetic Algorithm`. Using the combination of these 3 modules, we are able to run an iterative approach to estimate the encryption map from a paragraph of text. 
+When we want to send a private message that only ourselves understand, we will use a encryption map that subsitute letters with some other letters, which makes the original message unreadable. However, suppose we don't know the original encryption map, is there a way to estimate/approximate the encryption map using NLP ? In this project, we will use the bigram character model to build a likelihood evaluation metric for the estimated encryption map, and which will be produced by a really interesting technique named genetic algorithm. The whole project contains 3 modeules - `LanguageModel`, `Encoder` and `Genetic Algorithm`. Using the combination of these 3 modules, we are able to run an iterative approach to estimate the encryption map from a paragraph of text. By doing this project and building probabilistic language models from scratch, we will be able to understand the foundations of bigram models and word2vec in the future. The medium blog post regarding this topic can be found here 
+[Understanding Bigrams: Cipher Decryption with Language Modeling and Genetic Algorithm](https://towardsdatascience.com/understanding-bigrams-cipher-decryption-with-language-modeling-and-genetic-algorithm-1283ee0b3b80)
 
 ### Language Model
 
@@ -58,5 +59,6 @@ encoder = Encoder()
 encoded_message = encoder.encode(original_message)
 decoded_message = encoder.decode(encoded_message, best_mapping)
 ```
+
 
 
