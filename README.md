@@ -3,6 +3,16 @@
 When we want to send a private message that only ourselves understand, we will use a encryption map that subsitute letters with some other letters, which makes the original message unreadable. However, suppose we don't know the original encryption map, is there a way to estimate/approximate the encryption map using NLP ? In this project, we will use the bigram character model to build a likelihood evaluation metric for the estimated encryption map, and which will be produced by a really interesting technique named genetic algorithm. The whole project contains 3 modeules - `LanguageModel`, `Encoder` and `Genetic Algorithm`. Using the combination of these 3 modules, we are able to run an iterative approach to estimate the encryption map from a paragraph of text. By doing this project and building probabilistic language models from scratch, we will be able to understand the foundations of bigram models and word2vec in the future. The medium blog post regarding this topic can be found here 
 [Understanding Bigrams: Cipher Decryption with Language Modeling and Genetic Algorithm](https://towardsdatascience.com/understanding-bigrams-cipher-decryption-with-language-modeling-and-genetic-algorithm-1283ee0b3b80)
 
+### Environment Setup
+
+To recreate the environmemnt,
+
+1. create a conda virtual environment with `conda create --name your_env_name`, activate the environment `conda activate your_env_name`
+2. install poetry by `conda install poetry`
+3. install all the dependencies by `poetry install`
+4. install jupyter notebook by `pip install jupyter`
+5. install a ipykernel so that the virtual env will show up in jupyter `python -m ipykernel install --user --name your_env_name`
+
 ### Language Model
 
 The language model serves as the base evaluation metric as we randomize and refine the encryption map. When we encrypt using the true map and decrypt using the estimated map, the more correct-to-the-truth map will return a higher log likelihood score since the language model is trained over real English words that contains specific ordering of the alphabetical characters. The language model is trained using bigrams and Markov Property that calculates the probabiltities of every two character combination in English alphabets. The more frequent occurence combinations will have a higher probability score. The module is built in an automatically instantiated class that generates the probabilities scores of all combinations immediately. We could get the mapping the following way.
