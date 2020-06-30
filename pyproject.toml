@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "cipher_decryption"
+version = "1.0"
+description = "Application of NLP and Genetic Algorithm in cipher decryption"
+authors = ["Bowen"]
+packages = [
+	{ include = "cipher", from = "." },
+]
+
+[tool.poetry.dependencies]
+python = "~3.7"
+numpy = "*"
+pandas = "*"
+matplotlib = "*"
+
+[tool.poetry.dev-dependencies]
+black = "==19.3b0"
+pytest = "*"
